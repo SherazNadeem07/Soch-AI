@@ -3,6 +3,10 @@ import ThemeToggle from './components/globalcomponents/ThemeToggle'
 
 export default function page() {
   return (
-    <div><ThemeToggle/></div>
+    <>
+  <div>
+    theme 
+  </div>
+    </>
   )
 }
