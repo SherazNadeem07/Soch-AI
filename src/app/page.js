@@ -5,7 +5,10 @@ export default function page() {
   return (
     <>
   <div>
-    theme 
+<div className="">
+  <ThemeToggle />
+</div>
+
   </div>
     </>
   )
