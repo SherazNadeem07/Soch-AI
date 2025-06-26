@@ -9,8 +9,15 @@ export default function Settings() {
   const [emailEnabled, setEmailEnabled] = useState(true);
 
   return (
-    <div className=" flex  bg-background text-text px-4 py-5">
-      <div className="max-w-xl w-full p-6 rounded-lg shadow-md bg-white dark:bg-MaincontentBG text-text py-10">
+   <div className="min-h-screen bg-background text-text px-4 py-10 ">
+      
+      {/* ✅ Heading above the card */}
+      <h1 className="text-[40px] font-semibold  mb-4 ml-auto mr-auto max-w-xl ">Settings</h1>
+
+      {/* ✅ Card */}
+       <div className="max-w-xl mx-auto p-6 rounded-lg shadow-md bg-white dark:bg-[#1a1a1a] text-text ">
+        
+        {/* General Settings */}
         <div className="flex items-center gap-3 mb-3 ">
           <Image src="/Group.svg" alt="Settings Icon" width={33} height={33} />
           <h2 className="text-[24px] font-semibold">General Settings</h2>
@@ -53,6 +60,8 @@ export default function Settings() {
           </div>
         </div>
       </div>
+      <AuthPattern/>
     </div>
+    
   );
 }

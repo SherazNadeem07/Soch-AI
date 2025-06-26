@@ -9,8 +9,12 @@ module.exports = {
             MaincontentBG: "var(--color-insidecontentbg)",
             primary: "var(--color-primary)",
             whiteFixed: "var(--color-white)",
-            red: "#FF0000"
-        }
+        },
+        fontFamily: {
+        sfPro: ['SF Pro Display', 'sans-serif'],
+        redHat: ['Red Hat Display', 'sans-serif'],
+        urbanist: ['Urbanist', 'sans-serif'],
+      },
     },
   },
   plugins: [],
