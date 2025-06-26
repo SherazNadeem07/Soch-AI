@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import themeReducer from "../../service/themeSlice";
+import postsReducer from "../Slices/postsSlice"
+import themeReducer from "../Slices/themeSlice";
 
  const store = configureStore({
   reducer: {
-   theme: themeReducer,
+   posts: postsReducer,
+   theme: themeReducer
+  }
+ });
 
-  },
-});
-
-export default store
+export default store;
 

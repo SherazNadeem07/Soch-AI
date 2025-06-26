@@ -10,6 +10,7 @@ export default function Settings() {
   const [emailEnabled, setEmailEnabled] = useState(true);
 
   return (
+<<<<<<< HEAD:src/app/components/Settings.jsx
    <div className="min-h-screen bg-background text-text px-4 py-10 ">
       
       {/* ✅ Heading above the card */}
@@ -19,10 +20,15 @@ export default function Settings() {
        <div className="max-w-xl mx-auto p-6 rounded-lg shadow-md bg-white dark:bg-[#1a1a1a] text-text ">
         
         {/* General Settings */}
+=======
+    <div className=" flex  bg-background text-text px-4 py-5">
+      <div className="max-w-xl w-full p-6 rounded-lg shadow-md bg-white dark:bg-MaincontentBG text-text py-10">
+>>>>>>> 6c9eaca1c614458378b3598b90e6e236975242f6:src/app/components/Dashboard/setting/Settings.jsx
         <div className="flex items-center gap-3 mb-3 ">
           <Image src="/Group.svg" alt="Settings Icon" width={33} height={33} />
           <h2 className="text-[24px] font-semibold">General Settings</h2>
         </div>
+
         <ThemeToggle />
         <hr className="my-4 border-border" />
 
@@ -40,6 +46,7 @@ export default function Settings() {
           label="Email Notifications"
           value={emailEnabled}
           onToggle={() => setEmailEnabled(!emailEnabled)}
+          className=""
         />
         <hr className="my-4 border-border" />
 
@@ -48,15 +55,15 @@ export default function Settings() {
           <Image src="/Support.svg" alt="Support Icon" width={33} height={33} />
           <h2 className="text-[24px] font-semibold">Support</h2>
         </div>
-        <div className="flex flex-col  text-text cursor-pointer">
-            <div className="flex justify-between">
-                <div>FAQs</div>
-                <div className="text-[20px]">&gt;</div>
-            </div>
-          <div className="flex justify-between">
-                <div>Contact Us</div>
-                <div className="text-[20px]">&gt;</div>
-            </div>
+        <div className="flex flex-col text-text cursor-pointer space-y-3 px-2">
+          <div className="flex justify-between font-semibold ">
+            <div>FAQs</div>
+            <div className="">&gt;</div>
+          </div>
+          <div className="flex justify-between  font-semibold ">
+            <div>Contact Us</div>
+            <div className="">&gt;</div>
+          </div>
         </div>
       </div>
       <AuthPattern/>

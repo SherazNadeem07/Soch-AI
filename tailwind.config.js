@@ -6,6 +6,7 @@ module.exports = {
         colors: {
             background: "var(--color-bg)",
             text: "var(--color-text)",
+            MaincontentBG: "var(--color-insidecontentbg)",
             primary: "var(--color-primary)",
             whiteFixed: "var(--color-white)",
         },
