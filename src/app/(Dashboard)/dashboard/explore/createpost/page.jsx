@@ -1,7 +1,10 @@
 export default function page() {
     return(
         <>
-        create post
+        <div className=" text-text bg-background">
+            create postcjnds
+        </div>
+        
         </>
     )
 }
