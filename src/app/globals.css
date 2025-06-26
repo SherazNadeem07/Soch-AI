@@ -19,6 +19,8 @@
   --color-secondary: #f1f1f1;
   --color-border: #e0e0e0;
   --color-white: #ffffff;
+  --color-gray: #AEAEAE;
+
 }
 
 
@@ -30,6 +32,7 @@
   --color-secondary: #1e1e1e;
   --color-border: #333333;
   --color-white: #ffffff;
+  --color-gray: #868686;
 }
 
 @font-face {

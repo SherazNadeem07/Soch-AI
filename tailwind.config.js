@@ -9,6 +9,7 @@ module.exports = {
             MaincontentBG: "var(--color-insidecontentbg)",
             primary: "var(--color-primary)",
             whiteFixed: "var(--color-white)",
+            gray: "var(--color-gray)",
         },
         fontFamily: {
         sfPro: ['SF Pro Display', 'sans-serif'],
