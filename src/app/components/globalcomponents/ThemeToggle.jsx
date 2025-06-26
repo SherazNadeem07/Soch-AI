@@ -1,7 +1,7 @@
 // src/components/globalcomponents/ThemeToggle.jsx
 "use client";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../../../service/themeSlice";
+import { toggleTheme } from "../../../service/themeSlicee
 import ToggleRow from "./ToggleRow";
 
 export default function ThemeToggle() {
