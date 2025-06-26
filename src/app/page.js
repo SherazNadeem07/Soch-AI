@@ -1,14 +1,12 @@
-import React from 'react'
-import ThemeToggle from './components/globalcomponents/ThemeToggleee'
-import Settings from './components/Settingsss'
+'use client';
 
-export default function page() {
-  return (
-    <>
-  <div>
-      
+export default function HomePage() {
 
-  </div>
-    </>
-  )
+
+    return (
+        <>
+       
+    
+        </>
+    );
 }

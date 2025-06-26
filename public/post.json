@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "userImage": "/user1.jpg",
+    "userName": "Adam Broke",
+    "postTime": "2 hours ago",
+    "category": "Health",
+    "title": "This Mediterranean Bowl Is All You Need",
+    "description": "Nutrients - Chicken Breasts - Adds Lean Protein...",
+    "images": ["/img1.jpg", "/img2.jpg"],
+    "tags": ["HealthyFats", "Protein", "Quinoa"],
+    "comments": ""
+  }
+]
