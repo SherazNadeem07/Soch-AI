@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CreatePost from '../createpost/CreatePost';
-import { fetchPosts } from '../../../Redux/Slices/postsSlice';
+import { fetchPosts } from '../../../../Redux/Slices/postsSlice';
 
 export default function PostFeed() {
     const { items, status, error } = useSelector(state => state.posts);
