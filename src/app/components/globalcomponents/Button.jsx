@@ -1,6 +1,6 @@
 'use client';
 
-import SvgIcon from '@/components/GlobalComponents/SvgIcon';
+import SvgIcon from '@/app/components/globalcomponents/SvgIcon';
 
 export default function Button({
   type = 'button',

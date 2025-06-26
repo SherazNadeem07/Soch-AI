@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import ThemeToggle from "./globalcomponents/ThemeToggle";
-import ToggleRow from "./globalcomponents/ToggleRow";
+import ThemeToggle from "../../globalcomponents/ThemeToggle";
+import ToggleRow from "../../globalcomponents/ToggleRow";
 
 export default function Settings() {
   const [pushEnabled, setPushEnabled] = useState(true);
