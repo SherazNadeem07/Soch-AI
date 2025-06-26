@@ -9,6 +9,7 @@ export default function HomePage() {
         <div className="p-6 space-y-6">
             <PostFeed />
         </div>
+    
         </>
     );
 }
