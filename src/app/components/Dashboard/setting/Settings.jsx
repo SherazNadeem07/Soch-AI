@@ -10,7 +10,6 @@ export default function Settings() {
   const [emailEnabled, setEmailEnabled] = useState(true);
 
   return (
-<<<<<<< HEAD:src/app/components/Settings.jsx
    <div className="min-h-screen bg-background text-text px-4 py-10 ">
       
       {/* ✅ Heading above the card */}
@@ -20,10 +19,6 @@ export default function Settings() {
        <div className="max-w-xl mx-auto p-6 rounded-lg shadow-md bg-white dark:bg-[#1a1a1a] text-text ">
         
         {/* General Settings */}
-=======
-    <div className=" flex  bg-background text-text px-4 py-5">
-      <div className="max-w-xl w-full p-6 rounded-lg shadow-md bg-white dark:bg-MaincontentBG text-text py-10">
->>>>>>> 6c9eaca1c614458378b3598b90e6e236975242f6:src/app/components/Dashboard/setting/Settings.jsx
         <div className="flex items-center gap-3 mb-3 ">
           <Image src="/Group.svg" alt="Settings Icon" width={33} height={33} />
           <h2 className="text-[24px] font-semibold">General Settings</h2>
