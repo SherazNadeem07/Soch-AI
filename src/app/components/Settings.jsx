@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ThemeToggle from "./globalcomponents/ThemeToggle";
 import ToggleRow from "./globalcomponents/ToggleRow";
-import AuthPattern from "@/components/UI/AuthPattern";
+import AuthPattern from "@/app/components/UI/AuthPattern";
 
 export default function Settings() {
   const [pushEnabled, setPushEnabled] = useState(true);

@@ -1,5 +1,5 @@
 'use client';
-import { getIconPath } from '@/utils/getIconPath';
+import { getIconPath } from "@/utils/getIconPath";
 export default function SvgIcon({
   src = '',
   size = '1.5rem',
