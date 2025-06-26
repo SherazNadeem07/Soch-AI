@@ -1,89 +1,112 @@
 'use client';
 import { useState } from 'react';
+
 export default function CreatePostForm({ userImage, userName, onSubmit }) {
-    const [formData, setFormData] = useState({
+    const categories = ['LEARNING', 'HEALTH', 'TECHNOLOGY', 'BUSINESS', 'ENTERTAINMENT'];
+
+    const [form, setForm] = useState({
         category: '',
         title: '',
         description: '',
-        hashtag: '',
-        attachments: []
+        hashtag: ''
     });
 
-    const categories = ['LEARNING', 'HEALTH', 'TECHNOLOGY', 'BUSINESS', 'ENTERTAINMENT'];
+    const [hashtags, setHashtags] = useState([]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+        setForm(prev => ({ ...prev, [name]: value }));
+
+        // Auto-add hashtag when space/comma is pressed
+        if (name === 'hashtag' && (value.endsWith(' ') || value.endsWith(','))) {
+            const tag = value.trim().replace(/,/g, '');
+            if (tag) {
+                setHashtags(prev => [...prev, tag]);
+                setForm(prev => ({ ...prev, hashtag: '' }));
+            }
+        }
+    };
+
+    const removeTag = (index) => {
+        setHashtags(prev => prev.filter((_, i) => i !== index));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit(formData);
-        setFormData({
-            category: '',
-            title: '',
-            description: '',
-            hashtag: '',
-            attachments: []
+        onSubmit({
+            ...form,
+            hashtags: form.hashtag.trim() ? [...hashtags, form.hashtag.trim()] : hashtags
         });
-    };
-
-    const handleAttachment = (type) => {
-        console.log(`Adding ${type} attachment`);
+        setForm({ category: '', title: '', description: '', hashtag: '' });
+        setHashtags([]);
     };
 
     return (
-        <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-white rounded-xl shadow-md p-4 w-full max-w-2xl mx-auto mb-6">
-            <div className="flex justify-between items-center mb-4">
-                <h2 className="text-lg font-bold">Create Post</h2>
-            </div>
-
+        <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md p-4 max-w-2xl mx-auto mb-6">
             <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center space-x-3">
                     <img src={userImage} alt={userName} className="w-10 h-10 rounded-full object-cover" />
                     <div>
                         <p className="font-semibold">{userName}</p>
-                        <div className="relative">
-                            <select
-                                name="category"
-                                value={formData.category}
-                                onChange={handleChange}
-                                className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded px-2 py-1 appearance-none pr-6"
-                                required
-                            >
-                                <option value="" disabled>Category</option>
-                                {categories.map((cat, index) => (
-                                    <option key={index} value={cat}>{cat}</option>
-                                ))}
-                            </select>
-                            <div className="absolute right-1 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <polyline points="6 9 12 15 18 9"></polyline>
-                                </svg>
-                            </div>
-                        </div>
+                         <div className="flex items-center bg-blue-600 rounded-xl p-1 text-white">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.87539 1.6123H1.95039C1.8211 1.6123 1.6971 1.66367 1.60568 1.75509C1.51425 1.84651 1.46289 1.97051 1.46289 2.0998V5.02481C1.46289 5.1541 1.51425 5.2781 1.60568 5.36952C1.6971 5.46094 1.8211 5.51231 1.95039 5.51231H4.87539C5.00468 5.51231 5.12868 5.46094 5.22011 5.36952C5.31153 5.2781 5.36289 5.1541 5.36289 5.02481V2.0998C5.36289 1.97051 5.31153 1.84651 5.22011 1.75509C5.12868 1.66367 5.00468 1.6123 4.87539 1.6123ZM9.75039 6.48731H6.82539C6.6961 6.48731 6.5721 6.53867 6.48068 6.63009C6.38925 6.72151 6.33789 6.84551 6.33789 6.97481V9.89981C6.33789 10.0291 6.38925 10.1531 6.48068 10.2445C6.5721 10.3359 6.6961 10.3873 6.82539 10.3873H9.75039C9.87968 10.3873 10.0037 10.3359 10.0951 10.2445C10.1865 10.1531 10.2379 10.0291 10.2379 9.89981V6.97481C10.2379 6.84551 10.1865 6.72151 10.0951 6.63009C10.0037 6.53867 9.87968 6.48731 9.75039 6.48731ZM8.28789 1.6123C7.21247 1.6123 6.33789 2.48688 6.33789 3.5623C6.33789 4.63773 7.21247 5.51231 8.28789 5.51231C9.36332 5.51231 10.2379 4.63773 10.2379 3.5623C10.2379 2.48688 9.36332 1.6123 8.28789 1.6123ZM3.41289 6.48731C2.33747 6.48731 1.46289 7.36188 1.46289 8.43731C1.46289 9.51273 2.33747 10.3873 3.41289 10.3873C4.48832 10.3873 5.36289 9.51273 5.36289 8.43731C5.36289 7.36188 4.48832 6.48731 3.41289 6.48731Z" fill="currentColor"/>
+              </svg>
+                        <select
+                            name="category"
+                            value={form.category}
+                            onChange={handleChange}
+                            className="text-xs w-20 "
+                            required
+                        >
+                            <option value="" disabled>Category</option>
+                            {categories.map((cat) => (
+                                <option key={cat} value={cat}>{cat}</option>
+                            ))}
+                        </select>
                     </div>
                 </div>
             </div>
-
+</div>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3 rounded-lg p-3">
                     <input
-                        type="text"
                         name="title"
-                        value={formData.title}
+                        value={form.title}
                         onChange={handleChange}
                         placeholder="Title (optional)"
-                        className="w-full p-2 bg-transparent focus:outline-none mb-2 text-sm italic text-gray-600 dark:text-gray-300"
+                        className="w-full p-2 bg-transparent mb-2 text-sm outline-none"
                     />
                     <textarea
                         name="description"
-                        value={formData.description}
+                        value={form.description}
                         onChange={handleChange}
                         placeholder="What's on your mind?"
                         rows="3"
-                        className="w-full p-2 bg-transparent focus:outline-none mb-2 text-base font-medium text-gray-800 dark:text-white"
+                        className="w-full p-2 bg-transparent mb-2 outline-none"
                         required
+                    />
+
+                    <div className="flex flex-wrap gap-2 mb-2">
+                        {hashtags.map((tag, i) => (
+                            <div key={i} className="flex items-center bg-blue-100 dark:bg-blue-900 rounded-full px-3 py-1 text-sm">
+                                {tag}
+                                <button
+                                    type="button"
+                                    onClick={() => removeTag(i)}
+                                    className="ml-1 hover:text-gray-800 outline-none"
+                                >
+                                    ×
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                    <input
+                        name="hashtag"
+                        value={form.hashtag}
+                        onChange={handleChange}
+                        placeholder="#hashtags"
+                        className="w-full p-2 bg-transparent text-sm outline-none"
                     />
                 </div>
 
@@ -136,13 +159,13 @@ export default function CreatePostForm({ userImage, userName, onSubmit }) {
 
                 <button
                     type="submit"
-                    className="flex items-center justify-center gap-3 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg font-medium"
+                    className="flex items-center justify-center gap-2 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg font-medium"
                 >
                     Post
-                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.808 1.26156C15.0485 0.181367 16.8092 1.9505 15.7375 5.19109L13.3304 12.4122C11.7144 17.2689 9.06068 17.2689 7.44464 12.4122L6.73018 10.2689L4.5868 9.5544C-0.26982 7.93836 -0.26982 5.29316 4.5868 3.66861L8.49932 2.36727" stroke="white" stroke-width="1.27582" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.808 3.26156C17.0485 2.18137 18.8092 3.9505 17.7375 7.19109L15.3304 14.4122C13.7144 19.2689 11.0607 19.2689 9.44464 14.4122L8.73018 12.2689L6.5868 11.5544C1.73018 9.93836 1.73018 7.29316 6.5868 5.66861L10.4993 4.36727" stroke="white" stroke-width="1.27582" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8.89258 11.9036L11.9375 8.8501" stroke="white" stroke-width="1.27582" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                 </button>
             </form>
         </div>
