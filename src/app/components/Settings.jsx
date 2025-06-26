@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ThemeToggle from "./globalcomponents/ThemeToggle";
 import ToggleRow from "./globalcomponents/ToggleRow";
+import AuthPattern from "@/components/UI/AuthPattern";
 
 export default function Settings() {
   const [pushEnabled, setPushEnabled] = useState(true);
@@ -12,7 +13,7 @@ export default function Settings() {
    <div className="min-h-screen bg-background text-text px-4 py-10 ">
       
       {/* ✅ Heading above the card */}
-      <h1 className="text-[40px] font-semibold mb-4 ml-auto mr-auto max-w-xl ">Settings</h1>
+      <h1 className="text-[40px] font-semibold  mb-4 ml-auto mr-auto max-w-xl ">Settings</h1>
 
       {/* ✅ Card */}
        <div className="max-w-xl mx-auto p-6 rounded-lg shadow-md bg-white dark:bg-[#1a1a1a] text-text ">
@@ -58,6 +59,8 @@ export default function Settings() {
             </div>
         </div>
       </div>
+      <AuthPattern/>
     </div>
+    
   );
 }

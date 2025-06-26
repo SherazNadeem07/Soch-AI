@@ -28,4 +28,30 @@
   --color-secondary: #1e1e1e;
   --color-border: #333333;
   --color-white: #ffffff;
-} 
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('/fonts/SFProDisplay-Regular.woff2') format('woff2');
+    /* font-weight: 800; */
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url('/fonts/RedHatDisplay-VariableFont_wght.ttf') format('ttf');
+    /* font-weight: 800; */
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Urbanist';
+    src: url('/fonts/Urbanist-VariableFont_wght.ttf') format('ttf');
+    /* font-weight: 800; */
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+  font-family: 'SF Pro Display';
+}

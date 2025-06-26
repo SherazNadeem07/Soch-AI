@@ -1,17 +1,17 @@
-export default function AuthPattern({className}){
-    return(
-        <>
-        <div className={`bg-[#007bff] text-white mx-8  p-10 my-8 w-150 h-180 flex flex-col justify-center rounded-2xl ${className} `}>
-        <img src="/icons/patternAuth.svg" className="w-full h-[70%]"></img>
-        <div className="mx-8 mt-6">
+export default function AuthPattern({ className }) {
+  return (
+    <div className={`bg-[#007bff] text-white mx-4 p-6 my-6 max-w-sm w-full flex flex-col justify-center rounded-2xl ${className}`}>
+      <img src="/icons/patternAuth.svg" className="w-full h-auto object-fill" alt="Auth Pattern" />
+      <div className="mx-4 mt-4">
         <div>
-            <h1 className="text-3xl font-bold">Where AI Meets</h1>
-            <h1 className="text-xl font-semibold ">Local Knowledge</h1>
+          <h1 className="text-3xl md:text-4xl font-bold">Where AI Meets</h1>
+          <h1 className="text-xl md:text-2xl font-semibold">Local Knowledge</h1>
         </div>
-        <div className="flex text-xs mt-6"><p>Genius say Jugaar tak - </p> <span className="font-semibold">Smarter Together</span></div>
+        <div className="flex text-xs md:text-sm mt-4">
+          <p>Genius say Jugaar tak - </p>
+          <span className="font-semibold ml-1">Smarter Together</span>
         </div>
-        </div>
-        </>
-
-    )
+      </div>
+    </div>
+  );
 }
