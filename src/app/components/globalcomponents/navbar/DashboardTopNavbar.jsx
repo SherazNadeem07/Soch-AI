@@ -1,15 +1,16 @@
+'use client'
 import Image from "next/image";
 
 export default function DashboardTopNavbar({ title, name, username, avatarUrl }) {
   return (
-    <div className="flex justify-between items-center w-full  py-4 border-b  ">
+    <div className=" flex justify-between items-center w-full  py-4 border-b  ">
 
-      <h2 className="text-[40px] font-semibold text-black">{title}</h2>
+      <h2 className="text-[40px] font-semibold ">{title}</h2>
 
 
       <div className="flex items-center space-x-4">
        
-        <div className="w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center">
+        <div className="w-9 h-9 bg-bgBell rounded-full flex items-center justify-center">
           <Image src="/bell.svg" alt="Notification" width={20} height={20} />
         </div>
 
@@ -22,8 +23,8 @@ export default function DashboardTopNavbar({ title, name, username, avatarUrl })
             className="rounded-full"
           />
           <div className="flex flex-col">
-            <span className="text-sm font-medium text-black">{name}</span>
-            <span className="text-xs text-gray-500">@{username}</span>
+            <span className="text-sm font-medium ">{name}</span>
+            <span className="text-xs text-mailText">{username}</span>
           </div>
         </div>
       </div>

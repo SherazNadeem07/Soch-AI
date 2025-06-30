@@ -34,16 +34,16 @@ export default function PasswordInput({
           className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
-        {/* Toggle eye icon */}
+
         <button
           type="button"
           onClick={toggleVisibility}
           className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 dark:text-gray-400"
         >
           {visible ? (
-            <span aria-label="Hide password"><SvgIcon src='togglevisible'/></span> // You can replace with an icon
+            <span aria-label="Hide password"><SvgIcon src='togglevisible'/></span> 
           ) : (
-            <span aria-label="Show password"><SvgIcon src='togglehide'/></span> // You can replace with an icon
+            <span aria-label="Show password"><SvgIcon src='togglehide'/></span> 
           )}
         </button>
       </div>

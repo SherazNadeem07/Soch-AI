@@ -61,7 +61,7 @@ export default function CreatePost({
   };
 
   return (
-    <div className=" bg-white dark:bg-gray-900 text-gray-800 dark:text-white rounded-xl shadow-md p-4 w-full max-w-2xl mx-auto">
+    <div className=" text-text bg-background  rounded-xl shadow-md p-4 w-full max-w-2xl mx-auto">
       {/* ... Your top section code ... */}
       <div className="cursor-pointer flex justify-between items-start mb-3">
         <div className="flex items-center space-x-3">
